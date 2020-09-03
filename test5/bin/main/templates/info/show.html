@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+    <title>show info</title>
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>参照画面</h1>
+      <div th:object="${info}">
+        <div>
+          <label>ID</label>
+          <p th:text="*{id}"></p>
+        </div>
+        <div>
+          <label>名前</label>
+          <p th:text="*{name}"></p>
+        </div>
+        <div>
+          <label>年齢</label>
+          <p th:text="*{age}"></p>
+        </div>
+        <div>
+          <label>血液型</label>
+          <p th:text="*{blood}"></p>
+        </div>
+        <div>
+          <label>出身地</label>
+          <p th:text="*{birthplace}"></p>
+        </div>
+      </div>
+      <div>
+        <a class="btn btn-default" th:href="@{/info/{id}/edit(id=*{id})}">編集</a>
+      </div>
+      <div class="pull-right">
+        <a class="btn btn-link" href="/info">一覧画面へ</a>
+      </div>
+    </div>
+  </body>
+</html>
